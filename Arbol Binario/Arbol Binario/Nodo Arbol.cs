@@ -78,7 +78,7 @@ namespace Arbol_Binario
                 CoordenadaX = (int)((Izquierda.CoordenadaX + Derecha.CoordenadaX) / 2);
             else if (Izquierda != null) {
                 aux1 = Izquierda.CoordenadaX;
-                Derecha.CoordenadaX = CoordenadaX - 80;
+                Izquierda.CoordenadaX = CoordenadaX - 80;
                 CoordenadaX = aux1;
             }
             else if (Derecha != null) {
@@ -90,6 +90,59 @@ namespace Arbol_Binario
             xmin += Radio;
             }
         }
+
+
+        public void DibujarRamas(Graphics grafo,Pen Lapiz){
+            if(Izquierda!=null){
+            grafo.DrawLine(Lapiz,CoordenadaX,CoordenadaY,Izquierda.CoordenadaX,Izquierda.CoordenadaY);
+                Izquierda.DibujarRamas(grafo,Lapiz);
+            }if(Derecha!=null){
+            grafo.DrawLine(Lapiz,CoordenadaX,CoordenadaY,Derecha.CoordenadaX,Derecha.CoordenadaY);
+            Derecha.DibujarRamas(grafo,Lapiz);
+            }
+        }
+
+        public void DibujarNodo(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Brush encuentro) {
+            Rectangle rect = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
+            //prueba = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
+
+            grafo.FillEllipse(encuentro, rect);
+            grafo.FillEllipse(Relleno, rect);
+            grafo.DrawEllipse(Lapiz, rect);
+
+            StringFormat formato = new StringFormat();      //Dibujar contenido
+
+            formato.Alignment = StringAlignment.Center;
+            formato.LineAlignment = StringAlignment.Center;
+            grafo.DrawString(info.ToString(), fuente, RellenoFuente, CoordenadaX, CoordenadaY, formato);
+
+            if (Izquierda != null) {
+                Izquierda.DibujarNodo(grafo, fuente, Relleno, RellenoFuente, Lapiz, encuentro);
+            }
+            if (Derecha != null) {
+                Derecha.DibujarNodo(grafo, fuente, Relleno, RellenoFuente, Lapiz, encuentro);
+            }
+        }
+
+
+        public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz) {
+            Rectangle rect = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
+            //prueba = new Rectangle();
+            grafo.FillEllipse(Relleno, rect);
+            grafo.DrawEllipse(Lapiz, rect);
+
+            StringFormat formato = new StringFormat();
+            formato.Alignment = StringAlignment.Center;
+            formato.LineAlignment = StringAlignment.Center;
+            grafo.DrawString(info.ToString(), fuente, RellenoFuente, CoordenadaX, CoordenadaY, formato);
+        }
+
+
+
+
+
+
+
     }
 
   
