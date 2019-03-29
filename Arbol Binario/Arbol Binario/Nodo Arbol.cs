@@ -30,20 +30,23 @@ namespace Arbol_Binario
             Padre = padre;
             altura = 0;
         }
+      
+        
         public Nodo_Arbol Insertar (int x, Nodo_Arbol t, int Level){
             if(t==null){
             t=new Nodo_Arbol (x,null,null,null);
             t.nivel=Level;
-            }else if(x<t.info){
+            }else if(x<=t.info){
             Level++;
-            t.Izquierda=Insertar(x,t.Izquierda,Level);
-            }else if (x>t.info){
+            t.Izquierda = Insertar(x, t.Izquierda, Level);
+            }else if (x>=t.info){
             Level++;
-            t.Derecha=Insertar(x,t.Derecha,Level);
+            t.Derecha = Insertar(x, t.Derecha, Level);
             }else{MessageBox.Show("Dato Existente en el Arbol","Error de ingreso");
             }
             return t;
         }
+        
 
 
         public static int Alturas(Nodo_Arbol t) {   //Funcion para calcular la altura

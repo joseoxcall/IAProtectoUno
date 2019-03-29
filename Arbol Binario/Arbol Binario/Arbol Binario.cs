@@ -30,7 +30,7 @@ namespace Arbol_Binario
 
 
         public void DibujarArbol(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Brush encuentro) {
-            int x = 200;
+            int x = 250;
             int y = 75;
 
             if (Raiz == null) return;
@@ -40,12 +40,14 @@ namespace Arbol_Binario
         }
 
 
-        public int x1 = 400;
+        public int x1 =400;
         public int y2 = 75;
 
         public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente,Pen Lapiz,Nodo_Arbol Raiz,bool post,bool inor,bool preor) {
             Brush entorno = Brushes.Red;
 
         }
+
+
     }
 }

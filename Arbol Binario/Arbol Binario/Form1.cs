@@ -42,8 +42,24 @@ namespace Arbol_Binario
                 cont++;
                 Refresh();
                 Refresh();
+               
             }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+                     Random rnd = new Random();
+            int numero;
+            for (int at = 0; at <= 14;at++ ) {
+                numero = rnd.Next(1, 100);
+                TxDato.Text = Convert.ToString(numero);
+                BtInsertar.PerformClick();
+                TxDato.Text = "";
+            }
+            button1.Visible = false;                 
+        }
+
+
     }
 }

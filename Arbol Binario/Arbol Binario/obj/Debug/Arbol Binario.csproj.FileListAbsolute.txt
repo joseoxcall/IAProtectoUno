@@ -1,4 +1,3 @@
-C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol Binario.csprojResolveAssemblyReference.cache
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol_Binario.Form1.resources
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol_Binario.Properties.Resources.resources
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol Binario.csproj.GenerateResource.Cache
