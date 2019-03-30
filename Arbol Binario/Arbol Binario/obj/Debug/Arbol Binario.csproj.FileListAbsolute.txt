@@ -5,3 +5,4 @@ C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\bin\Debu
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\bin\Debug\Arbol Binario.pdb
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol Binario.exe
 C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol Binario.pdb
+C:\Users\Foxcal\Documents\universidad\Arbol\Arbol Binario\Arbol Binario\obj\Debug\Arbol Binario.csprojResolveAssemblyReference.cache

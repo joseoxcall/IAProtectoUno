@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.Collections;
 
 namespace Arbol_Binario
 {
@@ -15,7 +16,7 @@ namespace Arbol_Binario
         public Nodo_Arbol Padre;                //Rama Principal
         public int altura;
         public int nivel;
-        public Rectangle nodo;                  //Para dibujar el nodo
+        //public Rectangle nodo;                  //Para dibujar el nodo
 
         private Arbol_Binario arbol;            //Declarando Objeto
         public Nodo_Arbol() { }                 //Constructor
@@ -141,12 +142,53 @@ namespace Arbol_Binario
         }
 
 
+       public Queue cola = new Queue(); //se geneara una nueva cola
+        public int num=0;
+
+        public void contarlevel(Nodo_Arbol t, int auxlevel) {
+            if (t != null)
+            {
+                if (t.Izquierda != null)
+                {
+                    auxlevel++;
+                    if (auxlevel > num) {
+                        num = auxlevel;
+                    }
+                    contarlevel(t.Izquierda, auxlevel);
+                    auxlevel--;
+                }
+                if (t.Derecha != null)
+                {
+                    auxlevel++;
+                    if (auxlevel > num)
+                    { num = auxlevel; }
+                    
+                    contarlevel(t.Derecha, auxlevel);
+                    auxlevel--;
+                }
+            } 
+        }
 
 
 
 
-
+        public void recorer(int x, Nodo_Arbol t, int Level, int Levelaux)
+        {
+            if (t != null) {
+                if (Level == Levelaux) {
+                    cola.Enqueue(t.info);
+                }
+                if (t.Izquierda != null) {
+                    Level++;
+                    recorer(x,t.Izquierda,Level,Levelaux);
+                    Level--;
+                }
+                if (t.Derecha != null) {
+                    Level++;
+                    recorer(x,t.Derecha,Level,Levelaux);
+                    Level--;
+                }
+            }
+        }
     }
-
-  
 }

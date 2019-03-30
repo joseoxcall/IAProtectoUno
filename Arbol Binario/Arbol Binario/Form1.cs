@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Arbol_Binario
 {
@@ -16,6 +17,7 @@ namespace Arbol_Binario
         }
         int Dato = 0;
         int cont = 0;
+        int bus = 0;
         Arbol_Binario mi_Arbol = new Arbol_Binario(null);
         Graphics g;
 
@@ -60,6 +62,13 @@ namespace Arbol_Binario
             button1.Visible = false;                 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bus = int.Parse(TxDato.Text);
+            mi_Arbol.Buscar(bus);
+        
 
+            listBox1.Items.Clear();
+        }
     }
 }
